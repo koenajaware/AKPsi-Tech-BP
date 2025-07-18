@@ -7,6 +7,7 @@ import RecordAttendance from './components/RecordAttendance'
 import AttendanceRecords from './components/AttendanceRecords'
 import Requirements from './components/Requirements'
 import Setup from './components/Setup'
+import GoogleSignIn from './components/GoogleSignIn'
 
 import { supabase } from './supabaseClient';
 
@@ -16,7 +17,6 @@ console.log('Supabase client instance:', supabase);
 
 // function App() {
 //   const [count, setCount] = useState(0)
-
 //   return (
 //     <>
 //       <div>
@@ -81,12 +81,18 @@ function App() {
           <Route path="/" element={
             <div>
               <h1>Brother Portal AYEE</h1>
-              {/* <p>Use the navigation above to:</p>
-              <ul>
-                <li>Record new attendance</li>
-                <li>View all attendance records</li>
-                <li>Check requirements</li>
-              </ul> */}
+              <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                <h2>Sign In</h2>
+                <GoogleSignIn 
+                  clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
+                  onSuccess={(response) => {
+                    console.log('Google sign-in successful:', response);
+                  }}
+                  onError={(error) => {
+                    console.error('Google sign-in error:', error);
+                  }}
+                />
+              </div>
             </div>
           } />
           <Route path="/record-attendance" element={<RecordAttendance />} />

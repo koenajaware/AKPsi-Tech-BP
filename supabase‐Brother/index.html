@@ -5,9 +5,35 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <script src="https://accounts.google.com/gsi/client" async></script>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Google Sign-In Button Configuration -->
+    <div
+      id="g_id_onload"
+      data-client_id="814316694849-hmfq5jlvvr3u5pdlq0gnsfrn3f4tp8q0.apps.googleusercontent.com"
+
+      data-context="signin"
+      data-ux_mode="popup"
+      data-callback="handleSignInWithGoogle"
+      data-auto_prompt="false"
+      data-nonce=""
+      data-auto_select="true"
+      data-itp_support="true"
+      data-use_fedcm_for_prompt="true"
+    ></div>
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-shape="pill"
+      data-theme="outline"
+      data-text="signin_with"
+      data-size="large"
+      data-logo_alignment="left"
+    ></div>
+    
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
