@@ -13,7 +13,7 @@ const GoogleSignIn = ({ clientId, onSuccess, onError }) => {
             client_id: clientId,
             callback: (response) => {
               // Call the global handler function
-              window.handleSignInWithGoogle(response);
+              // window.handleSignInWithGoogle(response);
               // Also call the optional onSuccess callback if provided
               if (onSuccess) {
                 onSuccess(response);
